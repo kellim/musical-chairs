@@ -1,0 +1,14 @@
+.SongSelector {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+
+.SongSelector label {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.SongSelector select {
+  font-size: 1.2rem;
+}

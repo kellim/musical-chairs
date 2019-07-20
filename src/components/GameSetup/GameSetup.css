@@ -1,0 +1,11 @@
+.GameSetup {
+  background-color: darkturquoise;
+  color: white;
+  padding-bottom: 1rem;
+}
+
+.GameSetup-intro {
+  font-size: 1.4rem;
+  text-align: left;
+  padding: 0 1rem;
+}
