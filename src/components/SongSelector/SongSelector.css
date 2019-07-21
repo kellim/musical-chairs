@@ -1,14 +1,24 @@
 .SongSelector {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 1rem;
 }
 
 .SongSelector label {
-  font-size: 1.5rem;
   margin-right: 1rem;
+  font-size: 1.2rem;
 }
 
 .SongSelector select {
   font-size: 1.2rem;
+}
+
+@media (min-width: 49em) {
+  .SongSelector label {
+    font-size: 1.5rem;
+  }
+
+  .SongSelector {
+    flex-direction: row;
+  }
 }

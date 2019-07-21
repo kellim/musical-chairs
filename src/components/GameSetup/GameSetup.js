@@ -54,7 +54,7 @@ class GameSetup extends Component {
 
     return (
       <div className="GameSetup">
-        <h1>Game Setup</h1>
+        <h1 className="GameSetup-title">Game Setup</h1>
         <p className="GameSetup-intro">Automate your Musical Chairs game where nobody is left out: the music will play for a random amount of time in each round and give you time to remove chairs/players!</p>
         <SongSelector 
           songs={songs} 

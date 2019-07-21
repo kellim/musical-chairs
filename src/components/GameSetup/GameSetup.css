@@ -1,11 +1,27 @@
 .GameSetup {
+  max-width: 50rem;
   background-color: darkturquoise;
   color: white;
   padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
 }
 
 .GameSetup-intro {
-  font-size: 1.4rem;
   text-align: left;
   padding: 0 1rem;
+}
+
+.GameSetup-title {
+  text-align: center;
+}
+
+@media (min-width: 49em) {
+
+  .GameSetup-intro {
+    font-size: 1.4rem;
+  }
+  
 }

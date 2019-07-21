@@ -8,35 +8,35 @@
   }, 
   {
     "id": 1,
-    "labelText": "Minimum Play Time per Round (in seconds)",
+    "labelText": "Minimum Play Time per Round (seconds)",
     "value": 5,
     "min": 3,
     "max": 60
   },
   {
     "id": 2,
-    "labelText": "Maximum Play Time per Round (in seconds)",
+    "labelText": "Maximum Play Time per Round (seconds)",
     "value": 20,
     "min": 5,
     "max": 120
   },
   {
     "id": 3,
-    "labelText": "Delay Before Starting Game (in seconds)",
+    "labelText": "Delay Before Starting Game (seconds)",
     "value": 15,
     "min": 1,
     "max": 120
   },
   {
     "id": 4,
-    "labelText": "Delay Between Rounds (in seconds)",
+    "labelText": "Delay Between Rounds (seconds)",
     "value": 10,
     "min": 1,
     "max": 120
   },
   {
     "id": 5,
-    "labelText": "Delay after Resuming Paused Game (in seconds)",
+    "labelText": "Delay after Resuming Paused Game (seconds)",
     "value": 10,
     "min": 1,
     "max": 120
