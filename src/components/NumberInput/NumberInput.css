@@ -19,9 +19,10 @@
 @media (min-width: 49em) {
   .NumberInput {
     flex-direction: row;
+    font-size: 1.5rem;
   }
 
-  .NumberInput {
-    font-size: 1.5rem;
+  .NumberInput input {
+    width: 5rem;
   }
 }

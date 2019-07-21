@@ -4,55 +4,55 @@
     "title": "Be Jammin",
     "fileName": "BeJammin.mp3",
     "artist": "Alexander Nakarada",
-    "time": "2:47"
+    "duration": "167"
   },
   {
     "id": 1,
     "title": "Breaking Bollywood",
     "fileName": "BreakingBollywood.mp3",
     "artist": "Kevin MacLeod",
-    "time": "3:45"
+    "duration": "224"
   },
   {
     "id": 2,
     "title": "City Sunshine",
     "fileName": "CitySunshine.mp3",
     "artist": "Kevin MacLeod",
-    "time": "3:05"
+    "duration": "184"
   },
   {
     "id": 3,
     "title": "Dancing at the Inn",
     "fileName": "DancingAtTheInn.mp3",
     "artist": "Kevin MacLeod",
-    "time": "2:38"
+    "duration": "158"
   },
   {
     "id": 4,
     "title": "Funshine",
     "fileName": "Funshine.mp3",
     "artist": "Kevin MacLeod",
-    "time": "2:45"
+    "duration": "165"
   },
   {
     "id": 5,
     "title": "Ghost Town",
-    "fileName": "GhostTown.mp3",
+    "fileName": "Ghost Town.mp3",
     "artist": "Rafael Krux",
-    "time": "2:19"
+    "duration": "139"
   },
   {
     "id": 6,
     "title": "Pickled Pink",
-    "fileName": "pickledPink.mp3",
+    "fileName": "PickledPink.mp3",
     "artist": "Kevin MacLeod",
-    "time": "2:55"
+    "duration": "175"
   },
   {
     "id": 7,
-    "title": "Ukelele Song",
-    "fileName": "UkeleleSong.mp3",
+    "title": "Ukulele Song",
+    "fileName": "UkuleleSong.mp3",
     "artist": "Rafael Krux",
-    "time": "2:18"
+    "duration": "138"
   }
 ]
