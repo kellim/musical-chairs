@@ -1,4 +1,5 @@
 import React from 'react'
+import Error from '../Error'
 import './SongSelector.css'
 
 function SongSelector(props) {
@@ -7,12 +8,20 @@ function SongSelector(props) {
 
   return (
     <div className="SongSelector">
-      <label htmlFor="song-selector">Song</label>
-      <select className="form-control" id="song-selector" value={selectedSong.id} onChange={handleChange}>
+      <label htmlFor="songSelector">Song</label>
+      <select 
+        id="songSelector"
+        name="songSelector"
+        value={selectedSong && selectedSong.id}
+        onChange={handleChange}
+      >
         {songs.map(song => (
           <option key={song.id} value={song.id}>{`${song.title} by ${song.artist}`}</option>
         ))}
       </select>
+      {selectedSong && selectedSong.error && 
+        <Error errorMessage={selectedSong.error} />
+      }
     </div>
     )
 }

@@ -1,6 +1,7 @@
 .SongSelector {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   margin: 1rem;
 }
 
@@ -11,6 +12,10 @@
 
 .SongSelector select {
   font-size: 1.2rem;
+}
+
+.SongSelector .Error {
+  margin-top: .25rem;
 }
 
 @media (min-width: 49em) {

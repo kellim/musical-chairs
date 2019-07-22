@@ -1,22 +1,27 @@
 import React from 'react'
+import Error from '../Error'
 import './NumberInput.css'
 
 function NumberInput(props) {
 
   const { inputData, handleChange } = props
+  console.log('error: ', inputData.error)
 
   return (
     <div className="NumberInput">
-      <label htmlFor="song-selector">{`${inputData.labelText}:`}</label>
+      <label htmlFor={`numberInput${inputData.id}`}>{`${inputData.labelText}:`}</label>
       <input 
         type="number" 
-        id={`NumberInput-${inputData.id}`}
+        id={`numberInput${inputData.id}`}
+        name={`numberInput${inputData.id}`}
         value={inputData.value}
         min={inputData.min}
         max={inputData.max}
         onChange={handleChange}
-      >
-      </input>
+      />
+      {inputData.error && 
+        <Error errorMessage={inputData.error} />
+      }
     </div>
   )
 }

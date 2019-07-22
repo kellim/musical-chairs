@@ -18,6 +18,29 @@
   text-align: center;
 }
 
+.GameSetup-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.GameSetup-btn {
+  background-color: white;
+  color: #e57601;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem 1.5rem;
+  margin: 1.5rem 1rem 0 0;
+}
+
+.GameSetup-btn:hover,
+.GameSetup-btn:active {
+  background-color: whitesmoke;
+}
+
+.GameSetup-btn:active {
+  transform: translateY(1px);
+}
+
 @media (min-width: 49em) {
 
   .GameSetup-intro {
