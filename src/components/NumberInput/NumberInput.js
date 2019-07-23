@@ -5,7 +5,6 @@ import './NumberInput.css'
 function NumberInput(props) {
 
   const { inputData, handleChange } = props
-  console.log('error: ', inputData.error)
 
   return (
     <div className="NumberInput">

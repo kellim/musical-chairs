@@ -10,11 +10,12 @@ class GameSetup extends Component {
     const { 
       numberInputs,
       selectedSong,
-      isPlayingSong,
+      previewSongStatus,
       songs,
       updateSelectedSong,
-      toggleSongPreview,
+      updatePreviewSongStatus,
       updateNumberInput,
+      handleResetBtnClick
     } = this.props
 
     return (
@@ -32,8 +33,8 @@ class GameSetup extends Component {
           {selectedSong && !selectedSong.error && 
             <PreviewSong 
               selectedSong={selectedSong}
-              toggleSongPreview={toggleSongPreview}
-              isPlayingSong={isPlayingSong}
+              updatePreviewSongStatus={updatePreviewSongStatus}
+              previewSongStatus={previewSongStatus}
             />
           }
           {numberInputs.map(data => (
@@ -44,7 +45,7 @@ class GameSetup extends Component {
             />
           ))}
           <div className="GameSetup-btn-container">
-            <button className="GameSetup-btn" id="GameSetup-js-reset-btn">Reset to Defaults</button>
+            <button className="GameSetup-btn" type="button" onClick={handleResetBtnClick} id="GameSetup-js-reset-btn">Reset to Defaults</button>
             <button className="GameSetup-btn" type="submit">Let's Go!</button>
 
           </div>

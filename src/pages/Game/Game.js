@@ -14,13 +14,17 @@ class Game extends Component {
     this.state = {
       numberInputs: numberInputData.map(numInput => ({...numInput, error: ''})),
       selectedSong: {},
-      isPlayingSong: false,
+      // Possible statuses are "stopped", "paused", and "playing" - a song won't stay in "stopped" long,
+      // it's needed for the PreviewSong component to know what to do, mainly because it uses refs to play audio.
+      previewSongStatus: "stopped",
+      // Possible statuses are "setup", "setupError", "playGame"
       gameStatus: "setup"
      }
     this.updateNumberInput = this.updateNumberInput.bind(this)
     this.updateSelectedSong = this.updateSelectedSong.bind(this)
-    this.toggleSongPreview = this.toggleSongPreview.bind(this)
+    this.updatePreviewSongStatus = this.updatePreviewSongStatus.bind(this)
     this.processSetupForm = this.processSetupForm.bind(this)
+    this.resetSetupForm = this.resetSetupForm.bind(this)
   }
 
   static defaultProps = {
@@ -32,6 +36,7 @@ class Game extends Component {
   }
 
   updateNumberInput(evt) {
+    // This will match the numeric part of the id
     const id = evt.target.id.match(/\d+/)[0]
     const val = evt.target.value
 
@@ -46,19 +51,22 @@ class Game extends Component {
     }))
   }
 
-  updateSelectedSong(evt) {
+  updateSelectedSong(evt, song='0') {
     const { songs } = this.props
-    const selectedSongId = evt.target.value
+    let selectedSongId
+    // Defaults to first option in song selector when it's not called by choosing a song
+    // via the dropdown, such as when the setup form is reset.
+    selectedSongId = evt && evt.target.name === 'songSelector' ? evt.target.value : song
     this.setState({
-      isPlayingSong: false,
+      previewSongStatus: 'stopped',
       selectedSong: songs.filter(song => song.id.toString() === selectedSongId)[0]
     })
   }
 
-  toggleSongPreview(evt) {
-    this.setState(st => ({
-      isPlayingSong: !st.isPlayingSong
-    }))
+  updatePreviewSongStatus(newStatus) {
+    this.setState({
+      previewSongStatus: newStatus
+    })
   }
 
   processSetupForm(evt) {
@@ -124,25 +132,31 @@ class Game extends Component {
 
   isSelectedSongValid(val) {
     const { songs } = this.props
-    console.log(val, val >= 0 && val < songs.length - 1)
     return !isNaN(val) && val >= 0 && val <= songs.length - 1
+  }
+
+  resetSetupForm() {
+    this.setState({
+      numberInputs: numberInputData.map(numInput => ({...numInput, error: ''})),
+    })
+    this.updateSelectedSong()
   }
 
 
   render() {
-    console.log(this.state)
     return (
       <div className="Game">
-        {this.state.gameStatus === "setup" || this.state.gameStatus === "setupError" ?
+        {this.state.gameStatus === 'setup' || this.state.gameStatus === 'setupError' ?
           <GameSetup 
             selectedSong={this.state.selectedSong}
-            isPlayingSong={this.state.isPlayingSong}
+            previewSongStatus={this.state.previewSongStatus}
             numberInputs={this.state.numberInputs}
             songs={this.props.songs}
             updateNumberInput={this.updateNumberInput}
             updateSelectedSong={this.updateSelectedSong}
-            toggleSongPreview={this.toggleSongPreview}
+            updatePreviewSongStatus={this.updatePreviewSongStatus}
             handleSubmit={this.processSetupForm}
+            handleResetBtnClick={this.resetSetupForm}
           />
           : 
           <div>GAME WILL GO HERE</div>
