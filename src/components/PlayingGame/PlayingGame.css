@@ -1,0 +1,40 @@
+.PlayingGame {
+    max-width: 50rem;
+    background-color: darkturquoise;
+    color: white;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  .PlayingGame-info-container {
+    position: relative;
+  }
+
+.PlayingGame-status {
+  margin: 0 1rem 1rem 1rem;
+  text-align: center;
+}
+
+.PlayingGame-status h2 {
+  font-size: 4rem;
+}
+
+.PlayingGame-icon {
+  font-size: 5rem;
+}
+
+.PlayingGame-resource-list{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: .5rem;
+}
+
+.PlayingGame-countdown {
+  text-align: center;
+  font-size: 15rem;
+  color: #ff4500;
+}

@@ -20,7 +20,7 @@ class GameSetup extends Component {
 
     return (
       <div className="GameSetup">
-        <h1 className="GameSetup-title">Game Setup</h1>
+        <h2 className="GameSetup-title">Game Setup</h2>
         <p className="GameSetup-intro">Automate your Musical Chairs game so that nobody is left out:
           music will play for a random amount of time in each round and give you time between
           rounds to remove players and chairs!</p>
@@ -47,9 +47,7 @@ class GameSetup extends Component {
           <div className="GameSetup-btn-container">
             <button className="GameSetup-btn" type="button" onClick={handleResetBtnClick} id="GameSetup-js-reset-btn">Reset to Defaults</button>
             <button className="GameSetup-btn" type="submit">Let's Go!</button>
-
-          </div>
-          
+          </div>     
         </form>
       </div>
     )

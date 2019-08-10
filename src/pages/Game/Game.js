@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import GameSetup from '../../components/GameSetup'
+import PlayingGame from '../../components/PlayingGame'
 import songData from '../../data/songs.json'
 import numberInputData from '../../data/numberInputs.json'
 
@@ -16,10 +17,11 @@ class Game extends Component {
       selectedSong: {},
       // Possible statuses are "stopped", "paused", and "playing" - a song won't stay in "stopped" long,
       // it's needed for the PreviewSong component to know what to do, mainly because it uses refs to play audio.
-      previewSongStatus: "stopped",
+      previewSongStatus: 'stopped',
       // Possible statuses are "setup", "setupError", "playGame"
-      gameStatus: "setup"
+      gameStatus: 'setup'
      }
+
     this.updateNumberInput = this.updateNumberInput.bind(this)
     this.updateSelectedSong = this.updateSelectedSong.bind(this)
     this.updatePreviewSongStatus = this.updatePreviewSongStatus.bind(this)
@@ -121,7 +123,6 @@ class Game extends Component {
 
   isNumberInputValid(val, min, max) {
     let isValid = true;
-    console.log(val, min, max)
     if (isNaN(val) || isNaN(min) || isNaN(max)) {
       isValid = false
     } else if (val < min || val > max) {
@@ -142,8 +143,8 @@ class Game extends Component {
     this.updateSelectedSong()
   }
 
-
   render() {
+    const { selectedSong, numberInputs } = this.state
     return (
       <div className="Game">
         {this.state.gameStatus === 'setup' || this.state.gameStatus === 'setupError' ?
@@ -159,7 +160,16 @@ class Game extends Component {
             handleResetBtnClick={this.resetSetupForm}
           />
           : 
-          <div>GAME WILL GO HERE</div>
+          <PlayingGame
+            selectedSong={selectedSong}
+            secondsBeforeGameStart={parseInt(numberInputs[3].value)}
+            secondsBeforeResuming={parseInt(numberInputs[5].value)}
+            secondsBeforeRound={parseInt(numberInputs[4].value)}
+            minSecondsInRound={parseInt(numberInputs[1].value)}
+            maxSecondsInRound={parseInt(numberInputs[2].value)}
+            songDuration={parseInt(selectedSong.duration)}
+            playersLeft={parseInt(numberInputs[0].value)}
+          />
         }
       </div>
     )
