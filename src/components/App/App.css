@@ -1,5 +1,6 @@
 .App {
-   margin: 1rem auto;
+  margin: 0 auto;
+  max-width: 50rem;
 }
 
 .App-title {

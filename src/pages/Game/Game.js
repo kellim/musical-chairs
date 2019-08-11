@@ -27,6 +27,7 @@ class Game extends Component {
     this.updatePreviewSongStatus = this.updatePreviewSongStatus.bind(this)
     this.processSetupForm = this.processSetupForm.bind(this)
     this.resetSetupForm = this.resetSetupForm.bind(this)
+    this.returnToSetup = this.returnToSetup.bind(this)
   }
 
   static defaultProps = {
@@ -143,6 +144,12 @@ class Game extends Component {
     this.updateSelectedSong()
   }
 
+  returnToSetup() {
+    this.setState({
+      gameStatus: 'setup'
+    })
+  }
+
   render() {
     const { selectedSong, numberInputs } = this.state
     return (
@@ -169,6 +176,7 @@ class Game extends Component {
             maxSecondsInRound={parseInt(numberInputs[2].value)}
             songDuration={parseInt(selectedSong.duration)}
             playersLeft={parseInt(numberInputs[0].value)}
+            handleReturnBtnClick={this.returnToSetup}
           />
         }
       </div>

@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWalking, faChair, faHandPaper } from '@fortawesome/free-solid-svg-icons'
+import { faWalking, faChair, faHandPaper, faTrophy } from '@fortawesome/free-solid-svg-icons'
 import ResourceCount from '../ResourceCount'
+import GameStatus from '../GameStatus'
 import getSongSrc from '../../utils/getSong'
 import './PlayingGame.css'
 
@@ -18,6 +19,7 @@ class PlayingGame extends Component {
       }
       this.audioEl = React.createRef()
       this.startGame = this.startGame.bind(this)
+      this.restartGame = this.restartGame.bind(this)
     }
 
     static defaultProps = {
@@ -29,6 +31,7 @@ class PlayingGame extends Component {
   }
 
   componentWillUnmount() {
+    this.audioEl.current.pause()
     this.audioEl.current.removeEventListener('timeupdate', () => {})
   }
 
@@ -106,6 +109,16 @@ class PlayingGame extends Component {
     this.audioEl.current.removeEventListener('timeupdate', () => {})
   }
 
+  restartGame() {
+    this.audioEl.current.pause()
+    this.endGame()
+    this.setState({
+      secondsToWait: this.props.secondsBeforeGameStart,
+      playersLeft: this.props.playersLeft
+    })
+    this.startGame()
+  }
+
   render() {
     const { playStatus, playersLeft, secondsToWait } = this.state
     const { selectedSong } = this.props
@@ -128,9 +141,16 @@ class PlayingGame extends Component {
                   <div className="PlayingGame-countdown">{secondsToWait}</div>
                 </>
               :
-                <>
-                  <h2>Game Over</h2>
-                </>
+                <GameStatus 
+                  title="Game Over"
+                  faIcon={faTrophy}
+                  iconColor="gold"
+                  iconSize="10x"
+                  text="Congratulations, Winner!"
+                  playStatus={playStatus}
+                  handleRestartBtnClick={this.restartGame}
+                  handleReturnBtnClick={this.props.handleReturnBtnClick}
+                />
             }
           </div>
           <div className="PlayingGame-resource-list">
