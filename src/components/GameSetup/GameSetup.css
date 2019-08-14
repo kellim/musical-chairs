@@ -1,11 +1,10 @@
 .GameSetup {
-  max-width: 50rem;
-  background-color: darkturquoise;
-  color: white;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 3px 3px 6px -3px rgba(0, 0, 0, 0.5);
   padding-bottom: 1rem;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
   flex-direction: column;
 }
 
@@ -24,17 +23,20 @@
 }
 
 .GameSetup-btn {
-  background-color: white;
-  color: #e57601;
+  background-color: darkturquoise;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   padding: .5rem 1.5rem;
   margin: 1.5rem 1rem 0 0;
+  filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.4));
 }
 
 .GameSetup-btn:hover,
 .GameSetup-btn:active {
-  background-color: whitesmoke;
+  background-color: #dc143c;
 }
 
 .GameSetup-btn:active {
@@ -42,9 +44,7 @@
 }
 
 @media (min-width: 49em) {
-
   .GameSetup-intro {
     font-size: 1.4rem;
   }
-  
 }

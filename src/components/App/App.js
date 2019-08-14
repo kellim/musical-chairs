@@ -6,10 +6,12 @@ import Game from '../../pages/Game'
 function App() {
   return (
     <div className="App">
-      <h1 className="App-title">Musical Chairs: Automated</h1>
-      <Switch>
-        <Route exact path="/" component={Game} />
-      </Switch>
+      <div className="App-container">
+        <h1 className="App-title">Automate Musical Chairs</h1>
+        <Switch>
+          <Route exact path="/" component={Game} />
+        </Switch>
+      </div>
     </div>
   )
     

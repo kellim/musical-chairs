@@ -1,7 +1,5 @@
 .PlayingGame {
     max-width: 50rem;
-    background-color: darkturquoise;
-    color: white;
     padding-bottom: 1rem;
     display: flex;
     justify-content: center;
@@ -31,11 +29,5 @@
   top: 0;
   right: 0;
   margin-top: .5rem;
-}
-
-.PlayingGame-countdown {
-  text-align: center;
-  font-size: 15rem;
-  color: #ff4500;
 }
 

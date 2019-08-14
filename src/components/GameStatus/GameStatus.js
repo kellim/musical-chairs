@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './GameStatus.css'
 
 function GameStatus(props) {
-  const { title, 
+  const { title,
+          textColor, 
           faIcon,
           iconColor,
           iconSize,
+          iconAnimation,
           text,
           playStatus,
           countdownSeconds,
@@ -15,12 +17,20 @@ function GameStatus(props) {
          } = props
   return (
     <div className="GameStatus">
-      <h2 className="GameStatus-title">{title}</h2>
-      <FontAwesomeIcon className="GameStatus-icon" icon={faIcon} color={iconColor} size={iconSize} />
-      <p className="GameStatus-text">{text}</p>
+      <h2 className="GameStatus-title" style={{color: textColor}}>{title}</h2>
+      <FontAwesomeIcon className={`GameStatus-icon fa-${iconAnimation}`} icon={faIcon} color={iconColor} size={iconSize} />
+      <p className="GameStatus-text" style={{color: textColor}}>{text}</p>
       <button onClick={handleReturnBtnClick} className="GameStatus-btn">Return To Game Setup</button>
-      <button onClick={handleRestartBtnClick} className="GameStatus-btn">Restart Game with Same Settings</button>
+      <button onClick={handleRestartBtnClick} className="GameStatus-btn">Restart Game</button>
     </div>
   )
 }
+
+GameStatus.defaultProps = {
+  textColor: "darkcyan",
+  iconSize: "10x",
+  iconColor: "gold",
+  iconAnimation: ""
+}
+
 export default GameStatus

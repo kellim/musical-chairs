@@ -1,17 +1,19 @@
 .ResourceCount {
-  font-size: 2rem;
+  font-size: 3rem;
   display: grid;
   grid-template-columns: auto auto;
   grid-column-gap: .5rem;
   justify-content: end;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .ResourceCount-icon {
   margin-right: .25rem;
   color: darkcyan;
+  filter: drop-shadow(2px 2px 2.5px rgba(0, 0, 0, 0.4));
 }
 
 .ResourceCount-number {
-  color: lightgoldenrodyellow;
+  color: #333;
+  text-shadow: 2px 2px 2.5px rgba(0, 0, 0, 0.8);
 }

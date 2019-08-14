@@ -170,7 +170,6 @@ class Game extends Component {
           <PlayingGame
             selectedSong={selectedSong}
             secondsBeforeGameStart={parseInt(numberInputs[3].value)}
-            secondsBeforeResuming={parseInt(numberInputs[5].value)}
             secondsBeforeRound={parseInt(numberInputs[4].value)}
             minSecondsInRound={parseInt(numberInputs[1].value)}
             maxSecondsInRound={parseInt(numberInputs[2].value)}

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWalking, faChair, faHandPaper, faTrophy } from '@fortawesome/free-solid-svg-icons'
+import { faWalking, faChair, faHandPaper, faTrophy, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
 import ResourceCount from '../ResourceCount'
 import GameStatus from '../GameStatus'
 import getSongSrc from '../../utils/getSong'
@@ -20,8 +20,10 @@ class PlayingGame extends Component {
       this.audioEl = React.createRef()
       this.startGame = this.startGame.bind(this)
       this.restartGame = this.restartGame.bind(this)
+      this.handleAudioTimeUpdate = this.handleAudioTimeUpdate.bind(this)
+      this.countdownTimer = null
     }
-
+    
     static defaultProps = {
       songEndBuffer: 7
     }
@@ -32,29 +34,37 @@ class PlayingGame extends Component {
 
   componentWillUnmount() {
     this.audioEl.current.pause()
-    this.audioEl.current.removeEventListener('timeupdate', () => {})
+    this.removeAudioEventListener()
+    clearInterval(this.countdownTimer)
   }
 
   startGame() {
-    this.addAudioListener()
+    this.addAudioEventListener()
     this.playRound()
   }
 
-  addAudioListener() {
-    this.audioEl.current.addEventListener('timeupdate', evt => {
-       if (this.state.songCurrentTime < this.state.songStopTime) {
-        this.setState({
-          songCurrentTime: Math.floor(evt.target.currentTime)
-        })
-      } else if (this.state.playStatus === 'go') {
-        this.endRound()
-        if (this.state.playersLeft >= 2) {
-          this.playRound()
-        } else {
-          this.endGame()
-        }
+  addAudioEventListener() {
+    this.audioEl.current.addEventListener('timeupdate', this.handleAudioTimeUpdate)
+  }
+
+  removeAudioEventListener() {
+    this.audioEl.current.removeEventListener('timeupdate', this.handleAudioTimeUpdate)
+  }
+
+  handleAudioTimeUpdate(evt) {
+    if (this.state.playStatus !== 'go') return
+    if (this.state.songCurrentTime < this.state.songStopTime) {
+      this.setState({
+        songCurrentTime: Math.floor(evt.target.currentTime)
+      })
+    } else {
+      this.endRound()
+      if (this.state.playersLeft >= 2) {
+        this.playRound()
+      } else {
+        this.endGame()
       }
-    })
+    }
   }
 
   playRound() {
@@ -64,9 +74,9 @@ class PlayingGame extends Component {
     if (roundDuration > secondsLeftInSong) {
       this.resetSong()
     }
-    const countdownTimer = setInterval(() => {
+    this.countdownTimer = setInterval(() => {
       if (this.state.secondsToWait === 0) {
-        clearInterval(countdownTimer)
+        clearInterval(this.countdownTimer)
         this.countdownTimer = null
         this.playSong(roundDuration)
       } else {
@@ -106,46 +116,57 @@ class PlayingGame extends Component {
       playStatus: 'over'
     })
     this.resetSong()
-    this.audioEl.current.removeEventListener('timeupdate', () => {})
+    this.removeAudioEventListener()
   }
 
   restartGame() {
+    clearInterval(this.countdownTimer)
     this.audioEl.current.pause()
-    this.endGame()
+    this.resetSong()
+    this.removeAudioEventListener()
     this.setState({
       secondsToWait: this.props.secondsBeforeGameStart,
-      playersLeft: this.props.playersLeft
+      playersLeft: this.props.playersLeft,
+      playStatus: 'wait'
     })
     this.startGame()
   }
 
   render() {
     const { playStatus, playersLeft, secondsToWait } = this.state
-    const { selectedSong } = this.props
+    const { selectedSong, handleReturnBtnClick } = this.props
     return (
       <div className="PlayingGame">
         <div className="PlayingGame-info-container">
           <div className="PlayingGame-status">
             <audio ref={this.audioEl} src={getSongSrc(selectedSong.id)} />
             {playStatus === "go" ?
-              <>
-                <h2 style={{color: "darkcyan"}}>GO</h2>
-                <FontAwesomeIcon style={{color: "darkcyan"}} className="PlayingGame-icon" icon={faWalking} />
-                <h2>Now Playing: {selectedSong.title} by {selectedSong.artist}</h2>
-              </>
+              <GameStatus
+                title="Go!"
+                iconColor="turquoise"
+                faIcon={faWalking}
+                iconAnimation="spin"
+                text={`Now Playing: ${selectedSong.title}`}
+                playStatus={playStatus}
+                handleRestartBtnClick={this.restartGame}
+                handleReturnBtnClick={handleReturnBtnClick}
+              />
             :
               playStatus === "wait" ?
-                <>
-                  <h2 style={{color: "orangered"}}>STOP</h2>
-                  <FontAwesomeIcon style={{color: "orangered"}} className="PlayingGame-icon" icon={faHandPaper} />
-                  <div className="PlayingGame-countdown">{secondsToWait}</div>
-                </>
+                <GameStatus 
+                  title="Wait!"
+                  textColor="#dc143c"
+                  iconColor="#dc143c"
+                  faIcon={faHandPaper}
+                  text={`Music starts in ${this.state.secondsToWait} seconds!`}
+                  playStatus={playStatus}
+                  handleRestartBtnClick={this.restartGame}
+                  handleReturnBtnClick={this.props.handleReturnBtnClick}
+                />
               :
                 <GameStatus 
                   title="Game Over"
                   faIcon={faTrophy}
-                  iconColor="gold"
-                  iconSize="10x"
                   text="Congratulations, Winner!"
                   playStatus={playStatus}
                   handleRestartBtnClick={this.restartGame}

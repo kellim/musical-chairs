@@ -1,6 +1,8 @@
 .PreviewSong {
   margin: 0 1rem;
-  border: 1.5px solid white;
+  background-color: lightcyan;
+  border: 3px solid darkturquoise;
+  filter: drop-shadow(7px 7px 4px rgba(0, 0, 0, 0.4));
   border-radius: 5px;
 }
 
@@ -28,12 +30,12 @@
   margin-right: .25rem;
   border: none;
   background-color: transparent;
-  color: white;
+  color: darkturquoise;
 }
 
 .PreviewSong-play-button:hover,
 .PreviewSong-play-button:focus {
-  color: #edeae0;
+  color: turquoise;
 }
 
 .PreviewSong-play {

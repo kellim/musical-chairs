@@ -45,7 +45,7 @@ class GameSetup extends Component {
             />
           ))}
           <div className="GameSetup-btn-container">
-            <button className="GameSetup-btn" type="button" onClick={handleResetBtnClick} id="GameSetup-js-reset-btn">Reset to Defaults</button>
+            <button className="GameSetup-btn" type="button" onClick={handleResetBtnClick} id="GameSetup-js-reset-btn">Reset Form</button>
             <button className="GameSetup-btn" type="submit">Let's Go!</button>
           </div>     
         </form>
