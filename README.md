@@ -9,7 +9,8 @@ round in order to give the players time to remove a player and a chair before th
 * Run `npm start` to launch the app in development mode
 * Go to `localhost:3000` in the browser (Change port # if it used a port other than 3000)
 
-For instructions on how to play the game, click the **Instructions** link in the top navigation bar.
+For instructions on how to play the game, click the **Instructions** link in the top navigation bar of the
+**Musical Chairs: Automated** app.
 
 ## Technologies Used
 
