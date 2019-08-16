@@ -9,14 +9,6 @@
   max-width: 55rem;
 }
 
-/* .App-title {
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
-  background-color: darkturquoise;
-  padding: 1rem 0;
-  text-align: center;
-  margin-bottom: 1rem;
-} */
-
 @media(min-width: 34rem) {
   .App {
     background-color: azure;
@@ -24,7 +16,7 @@
 
   .App-container {
     background-color: white;
-    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.3);
   }
 }
 
