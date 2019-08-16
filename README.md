@@ -1,14 +1,15 @@
-# Musical Chairs: Automated (WORK IN PROGRESS)
+# Musical Chairs: Automated
 
-This app helps you automate the music part of a musical chairs game by playing music for a random amount of time.
-
-For information on how to play Musical Chairs, see [Playworks: Musical Chairs](https://www.playworks.org/game-library/musical-chairs/)
+This app lets you automate starting and stopping music in a Musical Chairs game. Music in each round is played for a random amount of seconds between a minimum and maximum amount chosen. You can also choose how long to wait between each
+round in order to give the players time to remove a player and a chair before the next round starts.
 
 ## Run Project Locally in Development Mode
 
 * Run `npm install` to install dependencies
 * Run `npm start` to launch the app in development mode
 * Go to `localhost:3000` in the browser (Change port # if it used a port other than 3000)
+
+For instructions on how to play the game, click the **Instructions** link in the top navigation bar.
 
 ## Technologies Used
 
