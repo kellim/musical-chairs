@@ -8,14 +8,14 @@
   }, 
   {
     "id": 1,
-    "labelText": "Minimum Play Time per Round (3 - 60 seconds)",
+    "labelText": "Min Play Time per Round (3 - 60 seconds)",
     "value": 5,
     "min": 3,
     "max": 60
   },
   {
     "id": 2,
-    "labelText": "Maximum Play Time per Round (5 - 120 seconds)",
+    "labelText": "Max Play Time per Round (5 - 120 seconds)",
     "value": 20,
     "min": 5,
     "max": 120

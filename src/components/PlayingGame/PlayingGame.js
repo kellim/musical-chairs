@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWalking, faChair, faHandPaper, faTrophy, faThumbsDown } from '@fortawesome/free-solid-svg-icons'
+import { faWalking, faChair, faHandPaper, faTrophy } from '@fortawesome/free-solid-svg-icons'
 import ResourceCount from '../ResourceCount'
 import GameStatus from '../GameStatus'
 import getSongSrc from '../../utils/getSong'
@@ -167,7 +166,7 @@ class PlayingGame extends Component {
                 <GameStatus 
                   title="Game Over"
                   faIcon={faTrophy}
-                  text="Congratulations, Winner!"
+                  text="Congrats, Winner!"
                   playStatus={playStatus}
                   handleRestartBtnClick={this.restartGame}
                   handleReturnBtnClick={this.props.handleReturnBtnClick}

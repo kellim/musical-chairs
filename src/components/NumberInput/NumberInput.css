@@ -9,6 +9,8 @@
 
 .NumberInput input {
   text-align: left;
+  width: 100%;
+  padding-left: .25rem;
 }
  
 .NumberInput label {

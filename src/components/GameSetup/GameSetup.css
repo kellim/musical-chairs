@@ -9,7 +9,6 @@
 }
 
 .GameSetup-intro {
-  text-align: left;
   padding: 0 1rem;
 }
 
@@ -19,7 +18,7 @@
 
 .GameSetup-btn-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .GameSetup-btn {
@@ -30,7 +29,7 @@
   border: none;
   border-radius: 5px;
   padding: .5rem 1.5rem;
-  margin: 1.5rem 1rem 0 0;
+  margin: 1.5rem 1rem 0 1rem;
   filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.4));
 }
 
@@ -43,7 +42,13 @@
   transform: translateY(1px);
 }
 
-@media (min-width: 49em) {
+@media (min-width: 34em) {
+  .GameSetup-btn-container {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 50em) {
   .GameSetup-intro {
     font-size: 1.4rem;
   }

@@ -1,5 +1,5 @@
 .ResourceCount {
-  font-size: 3rem;
+  font-size: 2rem;
   display: grid;
   grid-template-columns: auto auto;
   grid-column-gap: .5rem;
@@ -16,4 +16,10 @@
 .ResourceCount-number {
   color: #333;
   text-shadow: 2px 2px 2.5px rgba(0, 0, 0, 0.8);
+}
+
+@media(min-width: 34rem) {
+  .ResourceCount {
+    font-size: 2.5rem;
+  }
 }

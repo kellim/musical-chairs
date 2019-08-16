@@ -2,7 +2,7 @@
   margin: 0 1rem;
   background-color: lightcyan;
   border: 3px solid darkturquoise;
-  filter: drop-shadow(7px 7px 4px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.35));
   border-radius: 5px;
 }
 

@@ -18,7 +18,7 @@ function GameStatus(props) {
   return (
     <div className="GameStatus">
       <h2 className="GameStatus-title" style={{color: textColor}}>{title}</h2>
-      <FontAwesomeIcon className={`GameStatus-icon fa-${iconAnimation}`} icon={faIcon} color={iconColor} size={iconSize} />
+      <FontAwesomeIcon className={`GameStatus-icon fa-${iconAnimation}`} icon={faIcon} color={iconColor} />
       <p className="GameStatus-text" style={{color: textColor}}>{text}</p>
       <button onClick={handleReturnBtnClick} className="GameStatus-btn">Return To Game Setup</button>
       <button onClick={handleRestartBtnClick} className="GameStatus-btn">Restart Game</button>
@@ -28,7 +28,6 @@ function GameStatus(props) {
 
 GameStatus.defaultProps = {
   textColor: "darkcyan",
-  iconSize: "10x",
   iconColor: "gold",
   iconAnimation: ""
 }

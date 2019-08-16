@@ -8,7 +8,7 @@ function SongSelector(props) {
 
   return (
     <div className="SongSelector">
-      <label htmlFor="songSelector">Song</label>
+      <label htmlFor="songSelector">Song:</label>
       <select 
         id="songSelector"
         name="songSelector"
