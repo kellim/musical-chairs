@@ -15,7 +15,7 @@ function NavBar(props) {
       </div>
       <div className="NavBar-link-list">
         <ul>
-          <li><Link to="/">Instructions</Link></li>
+          <li><Link to="/instructions">Instructions</Link></li>
           <li><Link to="/about">About</Link></li>
         </ul>
       </div>

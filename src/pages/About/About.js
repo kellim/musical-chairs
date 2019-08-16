@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import songData from '../../data/songs.json'
 import './About.css'
 

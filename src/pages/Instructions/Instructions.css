@@ -1,0 +1,32 @@
+.Instructions {
+    margin: .5rem 1rem 1rem 2rem;
+    padding-bottom: .5rem;
+  }
+  
+  .Instructions h2 {
+    margin-top: 0;
+    padding-top: 0;
+    color: darkcyan;
+    font-size: 1.7rem;
+  }
+  
+  .Instructions h3 {
+    color: darkcyan;
+    font-size: 1.5rem;
+  }
+  
+  .Instructions a {
+    color: darkturquoise;
+    text-decoration: none;
+  }
+  
+  .Instructions a:hover,
+  .Instructions a:active {
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid darkturquoise;
+  }
+  
+  .Instructions-input-list {
+    padding: 0 0 1rem 1rem;
+    margin-bottom: 0;
+  }
