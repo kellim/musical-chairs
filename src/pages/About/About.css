@@ -1,0 +1,30 @@
+.About {
+  margin: .5rem 1rem 1rem 2rem;
+}
+
+.About h2 {
+  margin-top: 0;
+  padding-top: 0;
+  color: darkcyan;
+  font-size: 1.7rem;
+}
+
+.About h3 {
+  color: darkcyan;
+  font-size: 1.5rem;
+}
+
+.About a {
+  color: darkturquoise;
+  text-decoration: none;
+}
+
+.About a:hover,
+.About a:active {
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid darkturquoise;
+}
+
+.About-song-list {
+  padding: 0 0 1rem 1rem;
+}
