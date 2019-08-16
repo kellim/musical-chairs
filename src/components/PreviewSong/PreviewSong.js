@@ -49,6 +49,7 @@ class PreviewSong extends Component {
   }
 
   componentWillUnmount() {
+    this.resetSong()
     this.audioEl.current.removeEventListener("timeupdate", () => {})
   }
 
