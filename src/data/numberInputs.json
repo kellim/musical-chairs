@@ -1,0 +1,37 @@
+[
+  {
+    "id": 0,
+    "labelText": "Number of Players (2 - 500)",
+    "value": 2,
+    "min": 2,
+    "max": 500
+  }, 
+  {
+    "id": 1,
+    "labelText": "Min Play Time per Round (3 - 60 seconds)",
+    "value": 5,
+    "min": 3,
+    "max": 60
+  },
+  {
+    "id": 2,
+    "labelText": "Max Play Time per Round (5 - 120 seconds)",
+    "value": 20,
+    "min": 5,
+    "max": 120
+  },
+  {
+    "id": 3,
+    "labelText": "Delay Before Starting Game (1 - 120 seconds)",
+    "value": 15,
+    "min": 1,
+    "max": 120
+  },
+  {
+    "id": 4,
+    "labelText": "Delay Between Rounds (1 - 120 seconds)",
+    "value": 10,
+    "min": 1,
+    "max": 120
+  }
+]

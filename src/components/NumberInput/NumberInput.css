@@ -1,0 +1,31 @@
+.NumberInput {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  margin: 1rem 1rem 0 1rem;
+}
+
+.NumberInput input {
+  text-align: left;
+  width: 100%;
+  padding-left: .25rem;
+}
+ 
+.NumberInput label {
+  margin-right: 1rem;
+  flex-grow: 1;
+  text-align: left;
+}
+
+@media (min-width: 49em) {
+  .NumberInput {
+    flex-direction: row;
+    font-size: 1.5rem;
+  }
+
+  .NumberInput input {
+    width: 5rem;
+  }
+}

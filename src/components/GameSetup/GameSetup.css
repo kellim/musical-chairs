@@ -1,0 +1,55 @@
+.GameSetup {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 3px 3px 6px -3px rgba(0, 0, 0, 0.5);
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.GameSetup-intro {
+  margin: 0 1rem;
+}
+
+.GameSetup-title {
+  text-align: center;
+}
+
+.GameSetup-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.GameSetup-btn {
+  background-color: darkturquoise;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: .5rem 1.5rem;
+  margin: 1.5rem 1rem 0 1rem;
+  filter: drop-shadow(3px 3px 1px rgba(0, 0, 0, 0.4));
+}
+
+.GameSetup-btn:hover,
+.GameSetup-btn:active {
+  background-color: #dc143c;
+}
+
+.GameSetup-btn:active {
+  transform: translateY(1px);
+}
+
+@media (min-width: 34em) {
+  .GameSetup-btn-container {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 50em) {
+  .GameSetup-intro {
+    font-size: 1.4rem;
+  }
+}

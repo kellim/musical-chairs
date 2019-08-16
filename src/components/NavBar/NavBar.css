@@ -1,0 +1,61 @@
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: darkturquoise;
+  padding: .5rem 0 .5rem 1rem;
+  color: white;
+}
+
+.NavBar-title-container {
+  margin: 0;
+  padding: 0;
+}
+
+.NavBar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.NavBar a:hover,
+.NavBar a:active {
+  color: rgba(256, 256, 256, 0.9);
+}
+
+.NavBar-title,
+.NavBar-subtitle {
+  margin: 0;
+  padding: 0;
+  text-shadow: 1.5px 1.5px 2px rgba(0, 0, 0, 0.4);
+}
+
+.NavBar-title {
+  font-size: 1.5rem;
+}
+
+.NavBar-subtitle {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.NavBar-link-list ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 1.3rem;
+  margin-right: 1rem;
+}
+
+@media(min-width: 34rem) {
+  .NavBar-link-list ul {
+    flex-direction: row;
+  }
+
+  .NavBar-link-list li:not(:last-child) {
+    margin-right: 1rem;
+  }
+}

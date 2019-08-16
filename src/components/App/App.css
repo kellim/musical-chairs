@@ -1,0 +1,23 @@
+.App {
+  color: #333;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.App-container {
+  margin: 0 auto;
+  max-width: 55rem;
+}
+
+@media(min-width: 34rem) {
+  .App {
+    background-color: azure;
+  }
+
+  .App-container {
+    background-color: white;
+    box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.3);
+  }
+}
+
+

@@ -1,0 +1,33 @@
+.ResourceCount {
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: .5rem;
+  justify-content: space-between;
+  margin-right: .5rem;
+}
+
+.ResourceCount-icon {
+  margin-right: .25rem;
+  color: darkcyan;
+  filter: drop-shadow(2px 2px 2.5px rgba(0, 0, 0, 0.4));
+}
+
+.ResourceCount-number {
+  font-family: "Lucida Console", "Lucida Sans Typewriter", monospace;
+  margin-right: .5rem;
+  color: #333;
+  text-shadow: 2px 2px 2.5px rgba(0, 0, 0, 0.8);
+}
+
+
+
+@media(min-width: 34rem) {
+  .ResourceCount {
+    font-size: 2.5rem;
+  }
+
+  .ResourceCount-number {
+    margin-right: 0;
+  }
+}

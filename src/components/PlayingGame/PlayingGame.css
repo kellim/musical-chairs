@@ -1,0 +1,44 @@
+.PlayingGame {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+  }
+
+  .PlayingGame-info-container {
+    position: relative;
+  }
+
+.PlayingGame-status {
+  margin: 0;
+  text-align: center;
+}
+
+.PlayingGame-icon {
+  font-size: 5rem;
+}
+
+.PlayingGame-resource-list {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media(min-width: 34em) {
+  .PlayingGame {
+    margin: 0 1rem 1rem 1rem;
+  }
+}
+
+@media(min-width: 50em) {
+  .PlayingGame-resource-list{
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: .5rem;
+  }
+}
+
