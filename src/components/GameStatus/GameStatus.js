@@ -7,11 +7,8 @@ function GameStatus(props) {
           textColor, 
           faIcon,
           iconColor,
-          iconSize,
           iconAnimation,
           text,
-          playStatus,
-          countdownSeconds,
           handleRestartBtnClick,
           handleReturnBtnClick
          } = props

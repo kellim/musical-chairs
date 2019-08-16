@@ -132,7 +132,7 @@ class PlayingGame extends Component {
   }
 
   render() {
-    const { playStatus, playersLeft, secondsToWait } = this.state
+    const { playStatus, playersLeft, } = this.state
     const { selectedSong, handleReturnBtnClick } = this.props
     return (
       <div className="PlayingGame">
