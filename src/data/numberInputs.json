@@ -1,10 +1,10 @@
 [
   {
     "id": 0,
-    "labelText": "Number of Players (2 - 500)",
+    "labelText": "Number of Players",
     "value": 2,
     "min": 2,
-    "max": 500
+    "max": 9999
   }, 
   {
     "id": 1,
