@@ -144,7 +144,6 @@ class PlayingGame extends Component {
                 title="Go!"
                 iconColor="turquoise"
                 faIcon={faWalking}
-                iconAnimation="spin"
                 text={`Now Playing: ${selectedSong.title}`}
                 playStatus={playStatus}
                 handleRestartBtnClick={this.restartGame}
