@@ -9,7 +9,7 @@ function NavBar(props) {
     <nav className="NavBar">
       <div className="NavBar-title-container">
         <Link to="/">
-          <h1 className="NavBar-title">Musical Chairs</h1>
+          <h1 className="NavBar-title">Musical Chairs:</h1>
           <h2 className="NavBar-subtitle">Automated</h2>
         </Link>
       </div>

@@ -1,9 +1,8 @@
 .PlayingGame {
-    max-width: 50rem;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
   }
 
   .PlayingGame-info-container {
