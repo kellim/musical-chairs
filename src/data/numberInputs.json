@@ -23,7 +23,7 @@
   {
     "id": 3,
     "labelText": "Delay Before Starting Game (1 - 120 seconds)",
-    "value": 10,
+    "value": 3,
     "min": 1,
     "max": 120
   },
