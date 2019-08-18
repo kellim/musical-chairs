@@ -16,14 +16,14 @@
   {
     "id": 2,
     "labelText": "Max Play Time per Round (5 - 120 seconds)",
-    "value": 20,
+    "value": 30,
     "min": 5,
     "max": 120
   },
   {
     "id": 3,
     "labelText": "Delay Before Starting Game (1 - 120 seconds)",
-    "value": 15,
+    "value": 10,
     "min": 1,
     "max": 120
   },
