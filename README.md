@@ -3,6 +3,15 @@
 This app lets you automate starting and stopping music in a Musical Chairs game. Music in each round is played for a random amount of seconds between a minimum and maximum amount chosen. You can also choose how long to wait between each
 round in order to give the players time to remove a player and a chair before the next round starts.
 
+# Demo
+
+You can demo the app online at [musicalchairs.kelli.app](musicalchairs.kelli.app)
+
+The animated GIF below shows the app in action, but you won't be able to hear the music unless you
+go to the above link and try it out. 
+
+![Musical Chairs: Automated - Animated gif demo](demo/demo.gif)
+
 ## Run Project Locally in Development Mode
 
 * Run `npm install` to install dependencies
